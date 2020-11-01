@@ -6,5 +6,15 @@
 
 module.exports = {
   /* Your site config here */
-  plugins: [`gatsby-plugin-typescript`],
+  plugins: [
+    `gatsby-plugin-typescript`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown-pages`,
+        path: `${__dirname}/src/contents`, // Markdown 파일이 위치한 디렉토리
+      },
+    },
+    `gatsby-transformer-remark`,
+  ],
 };

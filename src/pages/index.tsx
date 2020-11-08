@@ -1,8 +1,8 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 
-import Layout from '../components/templates/Layout';
-import { ContentsQuery } from '../queries/content';
+import Layout from '@/components/templates/Layout';
+import { ContentsQuery } from '@/queries/content';
 
 interface Props {
   data: ContentsQuery;

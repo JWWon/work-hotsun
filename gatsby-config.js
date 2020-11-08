@@ -3,6 +3,7 @@
  *
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
+const path = require('path');
 
 module.exports = {
   /* Your site config here */
@@ -17,5 +18,11 @@ module.exports = {
     },
     `gatsby-transformer-remark`,
     `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-root-import`,
+      options: {
+        '@': path.join(__dirname, 'src'),
+      },
+    },
   ],
 };

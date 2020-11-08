@@ -1,8 +1,15 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 
-const Home: React.FC = ({ data }: any) => (
-  <div>
+import Layout from '../components/templates/Layout';
+import { ContentsQuery } from '../queries/content';
+
+interface Props {
+  data: ContentsQuery;
+}
+
+const Home: React.FC<Props> = ({ data }) => (
+  <Layout>
     <h4>{`${data.allMarkdownRemark.totalCount} Posts.`}</h4>
     {data.allMarkdownRemark.edges.map(({ node }: any) => (
       <div key={node.id}>
@@ -12,12 +19,12 @@ const Home: React.FC = ({ data }: any) => (
         </p>
       </div>
     ))}
-  </div>
+  </Layout>
 );
 export default Home;
 
 export const query = graphql`
-  query {
+  query ContentsQuery {
     allMarkdownRemark {
       totalCount
       edges {

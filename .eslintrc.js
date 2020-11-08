@@ -22,6 +22,7 @@ module.exports = {
     '@typescript-eslint/no-use-before-define': ['error'],
     // jsx 파일 확장자 등록
     'react/jsx-filename-extension': [1, { extensions: ['.jsx', '.tsx'] }],
+    'import/extensions': 'never',
   },
   settings: {
     react: {
